@@ -1,34 +1,33 @@
+// Gabriel Almarcha Martínez y Jorge Maqueda Miguel
+
 package com.example.p4_miami_gabriel_jorge.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import com.example.p4_miami_gabriel_jorge.R
 
-// Set of Material typography styles to start with
+val ChillaxFamily = FontFamily(Font(R.font.chillax_semibold, FontWeight.SemiBold))
+val SynonymFamily = FontFamily(Font(R.font.synonym_regular, FontWeight.Normal))
+
 val Typography = Typography(
-    bodyLarge = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Normal,
-        fontSize = 16.sp,
-        lineHeight = 24.sp,
-        letterSpacing = 0.5.sp
-    )
-    /* Other default text styles to override
+    // Títulos (Usan Chillax)
     titleLarge = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Normal,
-        fontSize = 22.sp,
-        lineHeight = 28.sp,
-        letterSpacing = 0.sp
+        fontFamily = ChillaxFamily,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 22.sp
     ),
-    labelSmall = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Medium,
-        fontSize = 11.sp,
-        lineHeight = 16.sp,
-        letterSpacing = 0.5.sp
+    // Descripciones (Usan Synonym)
+    bodyMedium = TextStyle(
+        fontFamily = SynonymFamily,
+        fontWeight = FontWeight.Normal,
+        fontSize = 14.sp
+    ),
+    bodyLarge = TextStyle(
+        fontFamily = SynonymFamily,
+        fontSize = 16.sp
     )
-    */
 )
