@@ -2,32 +2,33 @@
 
 package com.example.p4_miami_gabriel_jorge
 
-import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.SportsSoccer
-import androidx.compose.material.icons.filled.Restaurant
-import androidx.compose.material.icons.filled.Apartment
-import androidx.compose.material.icons.filled.NaturePeople
+import androidx.annotation.DrawableRes
 
 // 1. Tamaños para el efecto mosaico
 enum class CardSize {
-    SQUARE, TALL, WIDE
+    SQUARE,
+    TALL,
+    WIDE
 }
 
 // 2. Categorías para la BottomBar (con sus iconos oficiales)
-enum class MiamiCategory(val title: String, val icon: ImageVector) {
-    Sports("Deportes", Icons.Default.SportsSoccer),
-    Food("Comida", Icons.Default.Restaurant),
-    Buildings("Edificios", Icons.Default.Apartment),
-    Nature("Relax", Icons.Default.NaturePeople)
+enum class MiamiCategory(
+        val title: String,
+        @DrawableRes val icon: Int,
+        @DrawableRes val iconSelected: Int
+) {
+    Sports("Deportes", R.drawable.beach_ball, R.drawable.beach_ball_fill),
+    Food("Comida", R.drawable.fork_knife, R.drawable.fork_knife_fill),
+    Buildings("Edificios", R.drawable.buildings, R.drawable.buildings_fill),
+    Nature("Relax", R.drawable.tree_palm, R.drawable.tree_palm_fill)
 }
 
 // 3. El objeto de datos principal
 data class MiamiItem(
-    val id: Int,
-    val name: String,
-    val description: String,
-    val category: MiamiCategory,
-    val size: CardSize,
-    val imageRes: Int
+        val id: Int,
+        val name: String,
+        val description: String,
+        val category: MiamiCategory,
+        val size: CardSize,
+        val imageRes: Int
 )
