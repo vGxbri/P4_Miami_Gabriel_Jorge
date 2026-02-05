@@ -26,26 +26,27 @@ import androidx.compose.ui.unit.sp
 @Composable
 fun WelcomeScreen(onEnter: () -> Unit) {
     Box(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(MaterialTheme.colorScheme.background), // Usa #F8F9FA o #0A0D12
-        contentAlignment = Alignment.Center
+            modifier =
+                    Modifier.fillMaxSize()
+                            .background(
+                                    MaterialTheme.colorScheme.background
+                            ), // Usa #F8F9FA o #0A0D12
+            contentAlignment = Alignment.Center
     ) {
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
             Text(
-                text = "MIAMI APP",
-                style = MaterialTheme.typography.titleLarge.copy(fontSize = 40.sp),
-                color = MaterialTheme.colorScheme.primary // #00B4D8
+                    text = "MIAMI APP",
+                    style = MaterialTheme.typography.displayLarge,
+                    color = MaterialTheme.colorScheme.primary // #00B4D8
             )
             Spacer(modifier = Modifier.height(24.dp))
             Button(
-                onClick = onEnter,
-                colors = ButtonDefaults.buttonColors(
-                    containerColor = MaterialTheme.colorScheme.secondary // #FF4DAD
-                )
-            ) {
-                Text("Entrar", color = Color.White)
-            }
+                    onClick = onEnter,
+                    colors =
+                            ButtonDefaults.buttonColors(
+                                    containerColor = MaterialTheme.colorScheme.secondary // #FF4DAD
+                            )
+            ) { Text("Entrar", color = Color.White) }
         }
     }
 }
@@ -59,55 +60,53 @@ fun MainScreen(viewModel: MiamiViewModel, onItemClick: (Int) -> Unit) {
     val filteredItems = viewModel.getFilteredItems(currentCategory)
 
     Scaffold(
-        topBar = {
-            // Usamos CenterAlignedTopAppBar para un look más moderno
-            CenterAlignedTopAppBar(
-                title = {
-                    Text(
-                        text = "Miami ${currentCategory.title}",
-                        fontWeight = FontWeight.Bold,
-                        style = MaterialTheme.typography.titleLarge
-                    )
-                },
-                colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
-                    containerColor = MaterialTheme.colorScheme.primaryContainer,
-                    titleContentColor = MaterialTheme.colorScheme.onPrimaryContainer
+            topBar = {
+                // Usamos CenterAlignedTopAppBar para un look más moderno
+                CenterAlignedTopAppBar(
+                        title = {
+                            Text(
+                                    text = "Miami ${currentCategory.title}",
+                                    fontWeight = FontWeight.Bold,
+                                    style = MaterialTheme.typography.headlineSmall
+                            )
+                        },
+                        colors =
+                                TopAppBarDefaults.centerAlignedTopAppBarColors(
+                                        containerColor = MaterialTheme.colorScheme.primaryContainer,
+                                        titleContentColor =
+                                                MaterialTheme.colorScheme.onPrimaryContainer
+                                )
                 )
-            )
-        },
-        bottomBar = {
-            NavigationBar {
-                MiamiCategory.entries.forEach { category ->
-                    NavigationBarItem(
-                        selected = currentCategory == category,
-                        onClick = { viewModel.updateCategory(category) },
-                        label = { Text(category.title) },
-                        icon = { Icon(category.icon, contentDescription = null) }
-                    )
+            },
+            bottomBar = {
+                NavigationBar {
+                    MiamiCategory.entries.forEach { category ->
+                        NavigationBarItem(
+                                selected = currentCategory == category,
+                                onClick = { viewModel.updateCategory(category) },
+                                label = { Text(category.title) },
+                                icon = { Icon(category.icon, contentDescription = null) }
+                        )
+                    }
                 }
             }
-        }
     ) { innerPadding ->
         // El resto del código del Grid (el que ya te funciona)
         LazyVerticalStaggeredGrid(
-            columns = StaggeredGridCells.Adaptive(150.dp),
-            modifier = Modifier
-                .padding(innerPadding)
-                .fillMaxSize(),
-            contentPadding = PaddingValues(12.dp),
-            verticalItemSpacing = 8.dp,
-            horizontalArrangement = Arrangement.spacedBy(8.dp)
+                columns = StaggeredGridCells.Adaptive(150.dp),
+                modifier = Modifier.padding(innerPadding).fillMaxSize(),
+                contentPadding = PaddingValues(12.dp),
+                verticalItemSpacing = 8.dp,
+                horizontalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             items(
-                items = filteredItems,
-                key = { it.id },
-                span = { item ->
-                    if (item.size == CardSize.WIDE) StaggeredGridItemSpan.FullLine
-                    else StaggeredGridItemSpan.SingleLane
-                }
-            ) { item ->
-                MiamiCard(item = item, onClick = { onItemClick(item.id) })
-            }
+                    items = filteredItems,
+                    key = { it.id },
+                    span = { item ->
+                        if (item.size == CardSize.WIDE) StaggeredGridItemSpan.FullLine
+                        else StaggeredGridItemSpan.SingleLane
+                    }
+            ) { item -> MiamiCard(item = item, onClick = { onItemClick(item.id) }) }
         }
     }
 }
@@ -117,49 +116,51 @@ fun MiamiCard(item: MiamiItem, onClick: () -> Unit) {
     val height = if (item.size == CardSize.TALL) 240.dp else 160.dp
 
     Card(
-        modifier = Modifier
-            .fillMaxWidth()
-            .height(height)
-            .padding(4.dp)
-            .clickable { onClick() },
-        shape = RoundedCornerShape(16.dp),
-        colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.surface // #FFFFFF o #161B22
-        ),
-        elevation = CardDefaults.cardElevation(4.dp)
+            modifier = Modifier.fillMaxWidth().height(height).padding(4.dp).clickable { onClick() },
+            shape = RoundedCornerShape(16.dp),
+            colors =
+                    CardDefaults.cardColors(
+                            containerColor = MaterialTheme.colorScheme.surface // #FFFFFF o #161B22
+                    ),
+            elevation = CardDefaults.cardElevation(4.dp)
     ) {
         Box(modifier = Modifier.fillMaxSize()) {
             Image(
-                painter = painterResource(id = item.imageRes),
-                contentDescription = null,
-                contentScale = ContentScale.Crop,
-                modifier = Modifier.fillMaxSize()
+                    painter = painterResource(id = item.imageRes),
+                    contentDescription = null,
+                    contentScale = ContentScale.Crop,
+                    modifier = Modifier.fillMaxSize()
             )
 
             // Degradado dinámico
             Box(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .background(
-                        Brush.verticalGradient(
-                            colors = listOf(Color.Transparent, MaterialTheme.colorScheme.background.copy(alpha = 0.9f)),
-                            startY = 150f
-                        )
-                    )
+                    modifier =
+                            Modifier.fillMaxSize()
+                                    .background(
+                                            Brush.verticalGradient(
+                                                    colors =
+                                                            listOf(
+                                                                    Color.Transparent,
+                                                                    MaterialTheme.colorScheme
+                                                                            .background.copy(
+                                                                            alpha = 0.9f
+                                                                    )
+                                                            ),
+                                                    startY = 150f
+                                            )
+                                    )
             )
 
-            Column(
-                modifier = Modifier.align(Alignment.BottomStart).padding(12.dp)
-            ) {
+            Column(modifier = Modifier.align(Alignment.BottomStart).padding(12.dp)) {
                 Text(
-                    text = item.name,
-                    style = MaterialTheme.typography.titleLarge.copy(fontSize = 18.sp),
-                    color = MaterialTheme.colorScheme.onSurface
+                        text = item.name,
+                        style = MaterialTheme.typography.headlineMedium.copy(fontSize = 18.sp),
+                        color = MaterialTheme.colorScheme.onSurface
                 )
                 Text(
-                    text = item.category.title,
-                    style = MaterialTheme.typography.bodyMedium, // Fuente Synonym
-                    color = MaterialTheme.colorScheme.primary
+                        text = item.category.title,
+                        style = MaterialTheme.typography.bodyMedium, // Fuente Synonym
+                        color = MaterialTheme.colorScheme.primary
                 )
             }
         }
@@ -173,59 +174,64 @@ fun DetailScreen(itemId: Int, viewModel: MiamiViewModel, onBack: () -> Unit) {
     val item = viewModel.getItemById(itemId) ?: return
 
     Scaffold(
-        topBar = {
-            TopAppBar(
-                title = { Text(item.name, style = MaterialTheme.typography.titleLarge) },
-                navigationIcon = {
-                    IconButton(onClick = onBack) {
-                        Icon(Icons.Default.ArrowBack, contentDescription = null, tint = MaterialTheme.colorScheme.primary)
-                    }
-                },
-                colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = MaterialTheme.colorScheme.surface
+            topBar = {
+                TopAppBar(
+                        title = { Text(item.name, style = MaterialTheme.typography.headlineSmall) },
+                        navigationIcon = {
+                            IconButton(onClick = onBack) {
+                                Icon(
+                                        Icons.Default.ArrowBack,
+                                        contentDescription = null,
+                                        tint = MaterialTheme.colorScheme.primary
+                                )
+                            }
+                        },
+                        colors =
+                                TopAppBarDefaults.topAppBarColors(
+                                        containerColor = MaterialTheme.colorScheme.surface
+                                )
                 )
-            )
-        }
+            }
     ) { padding ->
         Column(
-            modifier = Modifier
-                .padding(padding)
-                .fillMaxSize()
-                .background(MaterialTheme.colorScheme.background)
+                modifier =
+                        Modifier.padding(padding)
+                                .fillMaxSize()
+                                .background(MaterialTheme.colorScheme.background)
         ) {
             Image(
-                painter = painterResource(id = item.imageRes),
-                contentDescription = null,
-                modifier = Modifier.fillMaxWidth().height(300.dp),
-                contentScale = ContentScale.Crop
+                    painter = painterResource(id = item.imageRes),
+                    contentDescription = null,
+                    modifier = Modifier.fillMaxWidth().height(300.dp),
+                    contentScale = ContentScale.Crop
             )
 
             Column(modifier = Modifier.padding(20.dp)) {
                 Text(
-                    text = item.name,
-                    style = MaterialTheme.typography.titleLarge.copy(fontSize = 28.sp),
-                    color = MaterialTheme.colorScheme.onBackground
+                        text = item.name,
+                        style = MaterialTheme.typography.headlineLarge.copy(fontSize = 28.sp),
+                        color = MaterialTheme.colorScheme.onBackground
                 )
 
                 Surface(
-                    color = MaterialTheme.colorScheme.secondary.copy(alpha = 0.1f),
-                    shape = RoundedCornerShape(8.dp),
-                    modifier = Modifier.padding(vertical = 8.dp)
+                        color = MaterialTheme.colorScheme.secondary.copy(alpha = 0.1f),
+                        shape = RoundedCornerShape(8.dp),
+                        modifier = Modifier.padding(vertical = 8.dp)
                 ) {
                     Text(
-                        text = item.category.title,
-                        modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp),
-                        style = MaterialTheme.typography.bodyMedium,
-                        color = MaterialTheme.colorScheme.secondary
+                            text = item.category.title,
+                            modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp),
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = MaterialTheme.colorScheme.secondary
                     )
                 }
 
                 Spacer(modifier = Modifier.height(12.dp))
 
                 Text(
-                    text = item.description,
-                    style = MaterialTheme.typography.bodyLarge, // Fuente Synonym
-                    color = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.8f)
+                        text = item.description,
+                        style = MaterialTheme.typography.bodyLarge, // Fuente Synonym
+                        color = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.8f)
                 )
             }
         }
