@@ -37,12 +37,54 @@ class MiamiViewModel : ViewModel() {
 
     // Datos simulados (En un caso real vendrían de un Repositorio)
     val allItems = listOf(
-        MiamiItem(1, "Inter Miami", "El equipo de Messi.", MiamiCategory.Sports, CardSize.WIDE, R.drawable.intermiami),
-        MiamiItem(2, "Miami Heat", "NBA en estado puro.", MiamiCategory.Sports, CardSize.TALL, R.drawable.intermiami),
-        MiamiItem(3, "Sándwich Cubano", "El mejor de la Calle Ocho.", MiamiCategory.Food, CardSize.SQUARE, R.drawable.intermiami),
-        MiamiItem(4, "Ceviche Tropical", "Fresco y cítrico.", MiamiCategory.Food, CardSize.TALL, R.drawable.intermiami),
-        MiamiItem(5, "Freedom Tower", "Historia de la inmigración.", MiamiCategory.Buildings, CardSize.TALL, R.drawable.intermiami),
-        MiamiItem(6, "South Beach", "Palmeras y sol.", MiamiCategory.Nature, CardSize.SQUARE, R.drawable.intermiami)
+        MiamiItem(
+            1,
+            "Inter Miami",
+            "El equipo de Messi.",
+            MiamiCategory.Sports,
+            CardSize.WIDE,
+            R.drawable.intermiami
+        ),
+        MiamiItem(
+            2,
+            "Miami Heat",
+            "NBA en estado puro.",
+            MiamiCategory.Sports,
+            CardSize.TALL,
+            R.drawable.intermiami
+        ),
+        MiamiItem(
+            3,
+            "Sándwich Cubano",
+            "El mejor de la Calle Ocho.",
+            MiamiCategory.Food,
+            CardSize.SQUARE,
+            R.drawable.intermiami
+        ),
+        MiamiItem(
+            4,
+            "Ceviche Tropical",
+            "Fresco y cítrico.",
+            MiamiCategory.Food,
+            CardSize.TALL,
+            R.drawable.intermiami
+        ),
+        MiamiItem(
+            5,
+            "Freedom Tower",
+            "Historia de la inmigración.",
+            MiamiCategory.Buildings,
+            CardSize.TALL,
+            R.drawable.intermiami
+        ),
+        MiamiItem(
+            6,
+            "South Beach",
+            "Palmeras y sol.",
+            MiamiCategory.Nature,
+            CardSize.SQUARE,
+            R.drawable.intermiami
+        )
     )
 
     fun updateCategory(newCategory: MiamiCategory) {
