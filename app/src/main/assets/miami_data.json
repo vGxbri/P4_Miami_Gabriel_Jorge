@@ -1,31 +1,282 @@
 [
-  { "id": 1, "name": "Deportes Acuáticos", "description": "Variedad y calidad de eventos acuáticos en la costa de Miami.", "category": "Sports", "size": "WIDE", "imageName": "deportes_acuaticos" },
-  { "id": 2, "name": "Ciclismo", "description": "Alquiler de bicicletas en South Beach y Miami Beach Fever.", "category": "Sports", "size": "SQUARE", "imageName": "ciclismo" },
-  { "id": 3, "name": "Snorkel", "description": "Excursiones en barco a Haulover Sandbar y arrecifes de coral.", "category": "Sports", "size": "TALL", "imageName": "snorkel" },
-  { "id": 4, "name": "Paseos en Bote", "description": "Recorridos por Bahía Vizcaína y Millionaire's Row.", "category": "Sports", "size": "WIDE", "imageName": "paseo_bote" },
-  { "id": 5, "name": "Miami Heat", "description": "Baloncesto de la NBA en el corazón de la ciudad.", "category": "Sports", "size": "TALL", "imageName": "miami_heat" },
-  { "id": 6, "name": "Miami Dolphins", "description": "Fútbol Americano de la NFL.", "category": "Sports", "size": "SQUARE", "imageName": "miami_dolphins" },
-  { "id": 7, "name": "Inter Miami", "description": "Fútbol de la MLS: El equipo de Messi.", "category": "Sports", "size": "WIDE", "imageName": "intermiami" },
-  { "id": 8, "name": "Miami Marlins", "description": "Béisbol de la MLB en un estadio de vanguardia.", "category": "Sports", "size": "SQUARE", "imageName": "miami_marlins" },
-  { "id": 9, "name": "Florida Panthers", "description": "Hockey sobre hielo de la NHL.", "category": "Sports", "size": "TALL", "imageName": "florida_panthers" },
-
-  { "id": 10, "name": "Comida Cubana", "description": "Clásicos: Puerto Sagua y Exquisito Restaurant para comida auténtica.", "category": "Food", "size": "WIDE", "imageName": "comida_cubana" },
-  { "id": 11, "name": "Alta Cocina", "description": "Experiencias de lujo en Prime 112, Nobu y Seaspice.", "category": "Food", "size": "TALL", "imageName": "alta_cocina" },
-  { "id": 12, "name": "L'Atelier", "description": "Estrella Michelin de Joël Robuchon en el Design District.", "category": "Food", "size": "SQUARE", "imageName": "michelin" },
-
-  { "id": 13, "name": "South Beach", "description": "La playa más icónica y vibrante de Miami.", "category": "Nature", "size": "TALL", "imageName": "south_beach" },
-  { "id": 14, "name": "Crandon Park", "description": "Playa tranquila en Cayo Bizcaino ideal para familias.", "category": "Nature", "size": "SQUARE", "imageName": "crandon_park_beach" },
-  { "id": 15, "name": "Cape Florida", "description": "Bill Baggs Cape Florida State Park y su histórico faro.", "category": "Nature", "size": "WIDE", "imageName": "bill_baggs_cape" },
-  { "id": 16, "name": "Coconut Grove", "description": "Ambiente bohemio y vistas increíbles a la costa.", "category": "Nature", "size": "SQUARE", "imageName": "coconut_grove" },
-  { "id": 17, "name": "Puerto de Miami", "description": "La capital mundial de los cruceros.", "category": "Nature", "size": "TALL", "imageName": "puerto_miami" },
-  { "id": 18, "name": "Ocean Drive", "description": "Calle icónica con arquitectura Art Deco frente al mar.", "category": "Nature", "size": "WIDE", "imageName": "ocean_drive" },
-
-  { "id": 19, "name": "Wynwood Walls", "description": "Museo al aire libre de arte callejero y graffiti.", "category": "Buildings", "size": "WIDE", "imageName": "wynwood_walls" },
-  { "id": 20, "name": "Bayside Marketplace", "description": "Centro comercial y de ocio frente a la bahía.", "category": "Buildings", "size": "SQUARE", "imageName": "bayside_marketplace" },
-  { "id": 21, "name": "Pérez Art Museum", "description": "Arte moderno y contemporáneo con vistas al mar.", "category": "Buildings", "size": "TALL", "imageName": "perez_art_museum" },
-  { "id": 22, "name": "Bayfront Park", "description": "Espacio verde urbano para eventos y relajación.", "category": "Buildings", "size": "SQUARE", "imageName": "bayfront_park" },
-  { "id": 23, "name": "Torre de la Libertad", "description": "Monumento histórico de la inmigración en Miami.", "category": "Buildings", "size": "TALL", "imageName": "torre_de_la_libertad" },
-  { "id": 24, "name": "Miami Tower", "description": "Famosa por su iluminación nocturna cambiante.", "category": "Buildings", "size": "WIDE", "imageName": "miami_tower" },
-  { "id": 25, "name": "Casa Casuarina", "description": "La antigua mansión de Versace en Ocean Drive.", "category": "Buildings", "size": "SQUARE", "imageName": "casa_casuaria" },
-  { "id": 26, "name": "Kennedy Space Center", "description": "Centro espacial de la NASA (Excursión obligatoria).", "category": "Buildings", "size": "TALL", "imageName": "centro_espacial_kennedy" }
+  {
+    "id": 1,
+    "name": "Deportes Acuáticos",
+    "description": "Sumérgete en la adrenalina de Miami con una amplia variedad de deportes en el agua. Desde motos de agua a toda velocidad hasta relajantes sesiones de paddle surf al atardecer, la costa ofrece el escenario perfecto para los amantes de la acción.",
+    "category": "Sports",
+    "size": "SQUARE",
+    "imageName": "deportes_acuaticos"
+  },
+  {
+    "id": 2,
+    "name": "Ciclismo en South Beach",
+    "description": "Recorre el famoso paseo marítimo sintiendo la brisa del mar. Alquilar una bicicleta en Miami Beach Fever es la mejor manera de descubrir el distrito Art Déco y disfrutar del ambiente vibrante sobre dos ruedas.",
+    "category": "Sports",
+    "size": "WIDE",
+    "imageName": "ciclismo"
+  },
+  {
+    "id": 3,
+    "name": "Snorkel y Arrecifes",
+    "description": "Descubre el mundo submarino con excursiones en barco hacia Haulover Sandbar. Las aguas cristalinas de Fort Lauderdale esconden arrecifes de coral llenos de vida marina colorida que te dejarán sin aliento.",
+    "category": "Sports",
+    "size": "TALL",
+    "imageName": "snorkel"
+  },
+  {
+    "id": 4,
+    "name": "Paseos en Bote",
+    "description": "Navega por las aguas turquesas de la Bahía Vizcaína y contempla las impresionantes mansiones de Millionaire's Row. Una experiencia de lujo que te ofrece las mejores vistas del skyline de la ciudad desde el agua.",
+    "category": "Sports",
+    "size": "SQUARE",
+    "imageName": "paseo_bote"
+  },
+  {
+    "id": 5,
+    "name": "Miami Heat (NBA)",
+    "description": "Siente el calor en el Kaseya Center apoyando a uno de los equipos más competitivos de la liga. La cultura 'White Hot' de los fans del Heat convierte cada partido en un espectáculo de luces, sonido y baloncesto de primer nivel.",
+    "category": "Sports",
+    "size": "SQUARE",
+    "imageName": "miami_heat"
+  },
+  {
+    "id": 6,
+    "name": "Miami Dolphins (NFL)",
+    "description": "Vive la pasión del fútbol americano en el Hard Rock Stadium. Disfruta del clásico 'tailgating' antes del partido y únete a la multitud para animar a los Dolphins en un estadio de clase mundial.",
+    "category": "Sports",
+    "size": "SQUARE",
+    "imageName": "miami_dolphins"
+  },
+  {
+    "id": 7,
+    "name": "Inter Miami (MLS)",
+    "description": "El equipo que cambió la historia del fútbol en EE.UU. con la llegada de estrellas mundiales. Asistir a un partido de las 'Garzas' es sumergirse en una marea rosa llena de energía, cánticos y pasión latina.",
+    "category": "Sports",
+    "size": "SQUARE",
+    "imageName": "intermiami"
+  },
+  {
+    "id": 8,
+    "name": "Miami Marlins (MLB)",
+    "description": "Disfruta del béisbol en el LoanDepot Park, un estadio moderno con techo retráctil y aire acondicionado. Es el lugar ideal para pasar una tarde en familia disfrutando del pasatiempo favorito de América con sabor caribeño.",
+    "category": "Sports",
+    "size": "SQUARE",
+    "imageName": "miami_marlins"
+  },
+  {
+    "id": 9,
+    "name": "Florida Panthers (NHL)",
+    "description": "Aunque en Florida hace calor, el hielo se enciende con los Panthers. Experimenta la velocidad y la intensidad del hockey profesional, un deporte que ha ganado una enorme base de seguidores en el sur del estado.",
+    "category": "Sports",
+    "size": "SQUARE",
+    "imageName": "florida_panthers"
+  },
+  {
+    "id": 10,
+    "name": "Puerto Sagua",
+    "description": "Un clásico inamovible de Miami Beach. Este restaurante ofrece la auténtica experiencia de 'comfort food' cubana en un ambiente nostálgico y sin pretensiones. Su ropa vieja y sopa de pollo son legendarias entre locales y turistas.",
+    "category": "Food",
+    "size": "SQUARE",
+    "imageName": "puerto_sagua"
+  },
+  {
+    "id": 11,
+    "name": "Exquisito Restaurant",
+    "description": "Una joya en el corazón de la Pequeña Habana. Con décadas de historia, este lugar sirve platos tradicionales cubanos con un sabor casero inigualable. Perfecto para probar un auténtico sándwich cubano después de pasear por la Calle Ocho.",
+    "category": "Food",
+    "size": "SQUARE",
+    "imageName": "exquisito"
+  },
+  {
+    "id": 12,
+    "name": "Prime 112",
+    "description": "Mucho más que un asador, es un lugar para ver y ser visto. Situado en un edificio histórico de South Beach, ofrece cortes de carne de primera calidad y un ambiente exclusivo donde es común encontrarse con celebridades.",
+    "category": "Food",
+    "size": "SQUARE",
+    "imageName": "prime112"
+  },
+  {
+    "id": 13,
+    "name": "Nobu Miami",
+    "description": "La excelencia de la cocina fusión japonesa-peruana en un entorno de lujo. Ubicado en el hotel Eden Roc, el chef Nobu Matsuhisa ofrece platos icónicos como el bacalao negro con miso que definen la alta gastronomía mundial.",
+    "category": "Food",
+    "size": "SQUARE",
+    "imageName": "nobu"
+  },
+  {
+    "id": 14,
+    "name": "Seaspice",
+    "description": "Situado a orillas del río Miami, este restaurante combina una gastronomía sofisticada con vistas espectaculares del skyline. Es famoso por sus brunchs de domingo y su ambiente náutico chic, ideal para llegar en barco.",
+    "category": "Food",
+    "size": "SQUARE",
+    "imageName": "seaspice"
+  },
+  {
+    "id": 15,
+    "name": "L'Atelier de Joël Robuchon",
+    "description": "La cumbre de la alta cocina francesa en el Design District. Con sus estrellas Michelin, ofrece una experiencia culinaria teatral donde los platos se preparan frente a ti en una elegante barra abierta. Inolvidable.",
+    "category": "Food",
+    "size": "SQUARE",
+    "imageName": "latelier"
+  },
+  {
+    "id": 16,
+    "name": "CVI.CHE 105",
+    "description": "El lugar de referencia para la comida peruana en Miami. Famoso por sus ceviches frescos y tiraditos, este restaurante vibrante y moderno captura la esencia de la gastronomía de Lima con un toque contemporáneo.",
+    "category": "Food",
+    "size": "SQUARE",
+    "imageName": "cviche105"
+  },
+  {
+    "id": 17,
+    "name": "Joe’s Stone Crab",
+    "description": "Una institución histórica que abrió antes de que Miami Beach fuera ciudad. Famoso mundialmente por sus cangrejos moros (Stone Crabs) y su tarta de lima, es una parada obligatoria llena de tradición y elegancia clásica.",
+    "category": "Food",
+    "size": "SQUARE",
+    "imageName": "joes_stone_crab"
+  },
+  {
+    "id": 18,
+    "name": "Pane & Vino",
+    "description": "Un rincón de Italia en Española Way. Este acogedor restaurante es famoso por hacer su pasta fresca a mano cada día en el escaparate. El servicio cálido y los sabores auténticos te transportarán directamente a la Toscana.",
+    "category": "Food",
+    "size": "SQUARE",
+    "imageName": "pane_vino"
+  },
+  {
+    "id": 19,
+    "name": "South Beach",
+    "description": "La playa más icónica del mundo, donde el Art Déco se encuentra con el océano. Arena blanca, aguas turquesas y las famosas casetas de salvavidas coloridas hacen de este lugar el epicentro de la vida social y turística de Miami.",
+    "category": "Nature",
+    "size": "SQUARE",
+    "imageName": "south_beach"
+  },
+  {
+    "id": 20,
+    "name": "Crandon Park Beach",
+    "description": "Un paraíso tropical en Cayo Vizcaíno. Con sus palmeras, aguas tranquilas y pavos reales paseando libremente, es el escape perfecto para familias que buscan relajación lejos del bullicio de la ciudad.",
+    "category": "Nature",
+    "size": "SQUARE",
+    "imageName": "crandon_park_beach"
+  },
+  {
+    "id": 21,
+    "name": "Bill Baggs Cape Florida",
+    "description": "Hogar del histórico faro 'El Farito', la estructura más antigua del condado. Este parque estatal ofrece playas vírgenes, senderos naturales y vistas impresionantes de las casas sobre pilotes de Stiltsville.",
+    "category": "Nature",
+    "size": "SQUARE",
+    "imageName": "bill_baggs_cape"
+  },
+  {
+    "id": 22,
+    "name": "Coconut Grove",
+    "description": "El barrio más antiguo y bohemio de Miami, lleno de vegetación exuberante y pavos reales. Su costa ofrece clubes de vela históricos y vistas relajantes a la bahía, ideal para pasear bajo la sombra de grandes árboles banianos.",
+    "category": "Nature",
+    "size": "SQUARE",
+    "imageName": "coconut_grove"
+  },
+  {
+    "id": 23,
+    "name": "Puerto de Miami",
+    "description": "Conocido como la 'Capital mundial de los cruceros'. Observar los gigantescos barcos zarpar al atardecer desde el MacArthur Causeway es un espectáculo visual que define la identidad marítima de la ciudad.",
+    "category": "Nature",
+    "size": "SQUARE",
+    "imageName": "puerto_miami"
+  },
+  {
+    "id": 24,
+    "name": "Ocean Drive",
+    "description": "La calle más famosa de Miami Beach, frente al mar y bordeada de edificios Art Déco iluminados con neón. Es el lugar perfecto para caminar, ver coches clásicos y sentir el pulso vibrante de la ciudad junto a la playa.",
+    "category": "Nature",
+    "size": "SQUARE",
+    "imageName": "ocean_drive"
+  },
+  {
+    "id": 25,
+    "name": "Haulover Beach (Perros)",
+    "description": "Un espacio de libertad donde las mascotas son bienvenidas. Situada entre el océano y la bahía, esta playa cuenta con dunas naturales y un parque para perros, siendo una de las favoritas para los locales.",
+    "category": "Nature",
+    "size": "SQUARE",
+    "imageName": "haulover_beach"
+  },
+  {
+    "id": 26,
+    "name": "Surfside Beach",
+    "description": "Un tramo de costa tranquilo y residencial, ideal para quienes buscan paz. Conocido por su ambiente comunitario y su sendero para caminar junto a la arena, es un refugio sereno al norte de Miami Beach.",
+    "category": "Nature",
+    "size": "SQUARE",
+    "imageName": "surfside"
+  },
+  {
+    "id": 27,
+    "name": "Wynwood Walls",
+    "description": "Un museo al aire libre que transformó un barrio de almacenes en la capital mundial del arte callejero. Paredes cubiertas por los mejores grafiteros del mundo crean un laberinto de color y creatividad imperdible.",
+    "category": "Buildings",
+    "size": "SQUARE",
+    "imageName": "wynwood_walls"
+  },
+  {
+    "id": 28,
+    "name": "Bayside Marketplace",
+    "description": "Un vibrante centro comercial al aire libre situado junto al puerto deportivo. Con música en vivo, tiendas y restaurantes, es el punto de partida perfecto para excursiones en barco y ofrece vistas directas a la bahía.",
+    "category": "Buildings",
+    "size": "SQUARE",
+    "imageName": "bayside_marketplace"
+  },
+  {
+    "id": 29,
+    "name": "Pérez Art Museum (PAMM)",
+    "description": "Una obra maestra de la arquitectura moderna diseñada por Herzog & de Meuron. Sus jardines colgantes y grandes ventanales frente a la bahía albergan una impresionante colección de arte contemporáneo internacional.",
+    "category": "Buildings",
+    "size": "SQUARE",
+    "imageName": "perez_art_museum"
+  },
+  {
+    "id": 30,
+    "name": "Bayfront Park",
+    "description": "El pulmón verde del centro de Miami. Este parque urbano cuenta con la famosa fuente Pepper, un anfiteatro y espacios abiertos donde se celebran desde clases de yoga hasta el festival Ultra Music.",
+    "category": "Buildings",
+    "size": "SQUARE",
+    "imageName": "bayfront_park"
+  },
+  {
+    "id": 31,
+    "name": "Torre de la Libertad",
+    "description": "El 'Ellis Island' del sur. Este edificio histórico de estilo mediterráneo sirvió como centro de asistencia para los refugiados cubanos en los años 60 y hoy se erige como un símbolo de libertad y esperanza en el skyline.",
+    "category": "Buildings",
+    "size": "SQUARE",
+    "imageName": "torre_de_la_libertad"
+  },
+  {
+    "id": 32,
+    "name": "Miami Tower",
+    "description": "Famosa por su elaborada iluminación nocturna que cambia de color según la ocasión. Este rascacielos de diseño escalonado diseñado por I.M. Pei es uno de los edificios más reconocibles y fotogénicos del centro.",
+    "category": "Buildings",
+    "size": "SQUARE",
+    "imageName": "miami_tower"
+  },
+  {
+    "id": 33,
+    "name": "Casa Casuarina",
+    "description": "La legendaria mansión de Gianni Versace en Ocean Drive. Con su opulenta arquitectura, piscina con azulejos de oro y mosaicos, es un monumento al exceso y el lujo que define una parte de la historia de South Beach.",
+    "category": "Buildings",
+    "size": "SQUARE",
+    "imageName": "casa_casuaria"
+  },
+  {
+    "id": 34,
+    "name": "Centro Espacial Kennedy",
+    "description": "Aunque a unas horas al norte, es una visita obligada desde Miami. La puerta de la humanidad al espacio, donde puedes ver cohetes reales, transbordadores y sentir la historia de la exploración espacial de la NASA.",
+    "category": "Buildings",
+    "size": "SQUARE",
+    "imageName": "centro_espacial_kennedy"
+  },
+  {
+    "id": 35,
+    "name": "The Miami Bull",
+    "description": "Una imponente escultura futurista inspirada en el toro de Wall Street. Representa la posición de Miami como la capital mundial de las criptomonedas y las finanzas modernas, simbolizando fuerza y avance tecnológico.",
+    "category": "Buildings",
+    "size": "SQUARE",
+    "imageName": "miami_bull"
+  }
 ]
