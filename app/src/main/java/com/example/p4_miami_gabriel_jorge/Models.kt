@@ -30,5 +30,6 @@ data class MiamiItem(
         val description: String,
         val category: MiamiCategory,
         val size: CardSize,
-        val imageRes: Int
+        val imageRes: Int,
+        val aspectRatio: Float = 1f
 )

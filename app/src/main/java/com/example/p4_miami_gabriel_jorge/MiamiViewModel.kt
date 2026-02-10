@@ -1,6 +1,7 @@
 package com.example.p4_miami_gabriel_jorge
 
 import android.app.Application
+import android.graphics.BitmapFactory
 import androidx.lifecycle.AndroidViewModel
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -16,7 +17,8 @@ class MiamiViewModel(application: Application) : AndroidViewModel(application) {
 
     // Esta será nuestra lista cargada desde el JSON
     private val _allItems = mutableListOf<MiamiItem>()
-    val allItems: List<MiamiItem> get() = _allItems
+    val allItems: List<MiamiItem>
+        get() = _allItems
 
     init {
         loadDataFromJSON()
@@ -26,7 +28,8 @@ class MiamiViewModel(application: Application) : AndroidViewModel(application) {
         val context = getApplication<Application>().applicationContext
 
         // 1. Leer el archivo JSON desde Assets
-        val jsonString = context.assets.open("miami_data.json").bufferedReader().use { it.readText() }
+        val jsonString =
+                context.assets.open("miami_data.json").bufferedReader().use { it.readText() }
 
         // 2. Usar Gson para convertir el texto en una lista de objetos temporales
         val gson = Gson()
@@ -35,19 +38,35 @@ class MiamiViewModel(application: Application) : AndroidViewModel(application) {
 
         // 3. Convertir los datos del JSON al modelo MiamiItem que usa la App
         // Dentro de tu función loadDataFromJSON()
-        val mappedItems = jsonItems.map { jsonItem ->
-            MiamiItem(
-                id = jsonItem.id,
-                name = jsonItem.name,
-                description = jsonItem.description,
-                category = MiamiCategory.valueOf(jsonItem.category),
-                size = CardSize.valueOf(jsonItem.size),
-                // Esto buscará una imagen en drawable con el nombre que pusimos en el JSON
-                imageRes = context.resources.getIdentifier(
-                    jsonItem.imageName, "drawable", context.packageName
-                ).let { if (it == 0) R.drawable.intermiami else it } // Si no la encuentra, pone una por defecto
-            )
-        }
+        val mappedItems =
+                jsonItems.map { jsonItem ->
+                    // Resolver recurso drawable
+                    val imageRes =
+                            context.resources.getIdentifier(
+                                            jsonItem.imageName,
+                                            "drawable",
+                                            context.packageName
+                                    )
+                                    .let { if (it == 0) R.drawable.intermiami else it }
+
+                    // Obtener dimensiones reales sin cargar el bitmap en memoria
+                    val opts = BitmapFactory.Options().apply { inJustDecodeBounds = true }
+                    BitmapFactory.decodeResource(context.resources, imageRes, opts)
+                    val aspectRatio =
+                            if (opts.outHeight > 0)
+                                    opts.outWidth.toFloat() / opts.outHeight.toFloat()
+                            else 1f
+
+                    MiamiItem(
+                            id = jsonItem.id,
+                            name = jsonItem.name,
+                            description = jsonItem.description,
+                            category = MiamiCategory.valueOf(jsonItem.category),
+                            size = CardSize.valueOf(jsonItem.size),
+                            imageRes = imageRes,
+                            aspectRatio = aspectRatio
+                    )
+                }
         _allItems.addAll(mappedItems)
     }
 
@@ -66,10 +85,10 @@ class MiamiViewModel(application: Application) : AndroidViewModel(application) {
 
 // Clase temporal para leer el JSON (los nombres deben coincidir con el archivo .json)
 data class MiamiItemJSON(
-    val id: Int,
-    val name: String,
-    val description: String,
-    val category: String,
-    val size: String,
-    val imageName: String
+        val id: Int,
+        val name: String,
+        val description: String,
+        val category: String,
+        val size: String,
+        val imageName: String
 )

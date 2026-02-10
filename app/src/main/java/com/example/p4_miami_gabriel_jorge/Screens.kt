@@ -82,7 +82,7 @@ fun MainScreen(viewModel: MiamiViewModel, onItemClick: (Int) -> Unit) {
                 Box(modifier = Modifier.fillMaxSize().padding(innerPadding)) {
                         // El resto del código del Grid
                         LazyVerticalStaggeredGrid(
-                                columns = StaggeredGridCells.Adaptive(150.dp),
+                                columns = StaggeredGridCells.Fixed(2),
                                 modifier = Modifier.fillMaxSize(),
                                 contentPadding =
                                         PaddingValues(
@@ -180,13 +180,12 @@ fun MainScreen(viewModel: MiamiViewModel, onItemClick: (Int) -> Unit) {
 
 @Composable
 fun MiamiCard(item: MiamiItem, onClick: () -> Unit) {
-        val height = if (item.size == CardSize.TALL) 240.dp else 160.dp
-
         Card(
                 modifier =
-                        Modifier.fillMaxWidth().height(height).padding(4.dp).clickable {
-                                onClick()
-                        },
+                        Modifier.fillMaxWidth()
+                                .aspectRatio(item.aspectRatio)
+                                .padding(4.dp)
+                                .clickable { onClick() },
                 shape = RoundedCornerShape(16.dp),
                 colors =
                         CardDefaults.cardColors(
