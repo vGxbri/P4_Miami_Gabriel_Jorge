@@ -20,8 +20,12 @@ class MiamiViewModel(application: Application) : AndroidViewModel(application) {
     val allItems: List<MiamiItem>
         get() = _allItems
 
+    private val _filteredItems = MutableStateFlow<List<MiamiItem>>(emptyList())
+    val filteredItems: StateFlow<List<MiamiItem>> = _filteredItems.asStateFlow()
+
     init {
         loadDataFromJSON()
+        updateCategory(MiamiCategory.Sports)
     }
 
     private fun loadDataFromJSON() {
@@ -72,10 +76,7 @@ class MiamiViewModel(application: Application) : AndroidViewModel(application) {
 
     fun updateCategory(newCategory: MiamiCategory) {
         _selectedCategory.value = newCategory
-    }
-
-    fun getFilteredItems(category: MiamiCategory): List<MiamiItem> {
-        return allItems.filter { it.category == category }
+        _filteredItems.value = _allItems.filter { it.category == newCategory }
     }
 
     fun getItemById(id: Int): MiamiItem? {

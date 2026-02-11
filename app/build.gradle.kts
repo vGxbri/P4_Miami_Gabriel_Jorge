@@ -61,4 +61,5 @@ dependencies {
     implementation("androidx.compose.material:material-icons-extended:1.6.0") // Para iconos específicos
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.0")
     implementation("com.google.code.gson:gson:2.10.1")
+    implementation("io.coil-kt.coil3:coil-compose:3.0.4")
 }
