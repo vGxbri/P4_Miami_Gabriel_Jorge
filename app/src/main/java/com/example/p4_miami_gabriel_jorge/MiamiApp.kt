@@ -1,5 +1,7 @@
 package com.example.p4_miami_gabriel_jorge
 
+import androidx.compose.animation.slideInHorizontally
+import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.runtime.Composable
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavType
@@ -16,7 +18,11 @@ fun MiamiApp() {
     NavHost(navController = navController, startDestination = "welcome") {
         composable("welcome") { WelcomeScreen(onEnter = { navController.navigate("home") }) }
 
-        composable("home") {
+        composable(
+                route = "home",
+                exitTransition = { slideOutHorizontally(targetOffsetX = { -it }) },
+                popEnterTransition = { slideInHorizontally(initialOffsetX = { -it }) }
+        ) {
             MainScreen(
                     viewModel = miamiViewModel,
                     onItemClick = { id -> navController.navigate("detail/$id") }
@@ -25,7 +31,9 @@ fun MiamiApp() {
 
         composable(
                 route = "detail/{itemId}",
-                arguments = listOf(navArgument("itemId") { type = NavType.IntType })
+                arguments = listOf(navArgument("itemId") { type = NavType.IntType }),
+                enterTransition = { slideInHorizontally(initialOffsetX = { it }) },
+                popExitTransition = { slideOutHorizontally(targetOffsetX = { it }) }
         ) { backStackEntry ->
             val id = backStackEntry.arguments?.getInt("itemId") ?: 0
             DetailScreen(

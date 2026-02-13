@@ -66,12 +66,14 @@ class MiamiViewModel(application: Application) : AndroidViewModel(application) {
                             name = jsonItem.name,
                             description = jsonItem.description,
                             category = MiamiCategory.valueOf(jsonItem.category),
-                            size = CardSize.valueOf(jsonItem.size),
                             imageRes = imageRes,
-                            aspectRatio = aspectRatio
+                            aspectRatio = aspectRatio,
+                            sponsored = jsonItem.sponsored,
+                            type = jsonItem.type
                     )
                 }
-        _allItems.addAll(mappedItems)
+        // Ordenamos: primero los sponsored, luego el resto
+        _allItems.addAll(mappedItems.sortedByDescending { it.sponsored })
     }
 
     fun updateCategory(newCategory: MiamiCategory) {
@@ -90,6 +92,7 @@ data class MiamiItemJSON(
         val name: String,
         val description: String,
         val category: String,
-        val size: String,
-        val imageName: String
+        val imageName: String,
+        val sponsored: Boolean = false,
+        val type: String
 )
