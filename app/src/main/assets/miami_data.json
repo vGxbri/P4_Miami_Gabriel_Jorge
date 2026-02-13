@@ -235,12 +235,12 @@
   },
   {
     "id": 27,
-    "name": "Wynwood Walls",
-    "description": "Un museo al aire libre que transformó un barrio de almacenes en la capital mundial del arte callejero. Paredes cubiertas por los mejores grafiteros del mundo crean un laberinto de color y creatividad imperdible.",
+    "name": "Miami Tower",
+    "description": "Famosa por su elaborada iluminación nocturna que cambia de color según la ocasión. Este rascacielos de diseño escalonado diseñado por I.M. Pei es uno de los edificios más reconocibles y fotogénicos del centro.",
     "category": "Buildings",
-    "imageName": "wynwood_walls",
+    "imageName": "miami_tower",
     "sponsored": false,
-    "type": "Arte Urbano"
+    "type": "Rascacielos"
   },
   {
     "id": 28,
@@ -253,24 +253,6 @@
   },
   {
     "id": 29,
-    "name": "Pérez Art Museum (PAMM)",
-    "description": "Una obra maestra de la arquitectura moderna diseñada por Herzog & de Meuron. Sus jardines colgantes y grandes ventanales frente a la bahía albergan una impresionante colección de arte contemporáneo internacional.",
-    "category": "Buildings",
-    "imageName": "perez_art_museum",
-    "sponsored": false,
-    "type": "Museo"
-  },
-  {
-    "id": 30,
-    "name": "Bayfront Park",
-    "description": "El pulmón verde del centro de Miami. Este parque urbano cuenta con la famosa fuente Pepper, un anfiteatro y espacios abiertos donde se celebran desde clases de yoga hasta el festival Ultra Music.",
-    "category": "Buildings",
-    "imageName": "bayfront_park",
-    "sponsored": false,
-    "type": "Parque Urbano"
-  },
-  {
-    "id": 31,
     "name": "Torre de la Libertad",
     "description": "El 'Ellis Island' del sur. Este edificio histórico de estilo mediterráneo sirvió como centro de asistencia para los refugiados cubanos en los años 60 y hoy se erige como un símbolo de libertad y esperanza en el skyline.",
     "category": "Buildings",
@@ -279,13 +261,32 @@
     "type": "Monumento"
   },
   {
-    "id": 32,
-    "name": "Miami Tower",
-    "description": "Famosa por su elaborada iluminación nocturna que cambia de color según la ocasión. Este rascacielos de diseño escalonado diseñado por I.M. Pei es uno de los edificios más reconocibles y fotogénicos del centro.",
+    "id": 30,
+    "name": "Pérez Art Museum (PAMM)",
+    "description": "Una obra maestra de la arquitectura moderna diseñada por Herzog & de Meuron. Sus jardines colgantes y grandes ventanales frente a la bahía albergan una impresionante colección de arte contemporáneo internacional.",
     "category": "Buildings",
-    "imageName": "miami_tower",
+    "imageName": "perez_art_museum",
     "sponsored": false,
-    "type": "Rascacielos"
+    "type": "Museo"
+  },
+  {
+    "id": 31,
+    "name": "Bayfront Park",
+    "description": "El pulmón verde del centro de Miami. Este parque urbano cuenta con la famosa fuente Pepper, un anfiteatro y espacios abiertos donde se celebran desde clases de yoga hasta el festival Ultra Music.",
+    "category": "Buildings",
+    "imageName": "bayfront_park",
+    "sponsored": false,
+    "type": "Parque Urbano"
+  },
+
+  {
+    "id": 32,
+    "name": "Wynwood Walls",
+    "description": "Un museo al aire libre que transformó un barrio de almacenes en la capital mundial del arte callejero. Paredes cubiertas por los mejores grafiteros del mundo crean un laberinto de color y creatividad imperdible.",
+    "category": "Buildings",
+    "imageName": "wynwood_walls",
+    "sponsored": false,
+    "type": "Arte Urbano"
   },
   {
     "id": 33,
