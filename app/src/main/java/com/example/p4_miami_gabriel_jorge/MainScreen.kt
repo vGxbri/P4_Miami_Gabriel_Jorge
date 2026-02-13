@@ -46,6 +46,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -62,7 +63,8 @@ fun MainScreen(viewModel: MiamiViewModel, onItemClick: (Int) -> Unit) {
                         CenterAlignedTopAppBar(
                                 title = {
                                         Text(
-                                                text = "MIAMI ${currentCategory.title}",
+                                                text =
+                                                        "${stringResource(R.string.miami).uppercase()} ${stringResource(currentCategory.titleRes)}",
                                                 fontWeight = FontWeight.Bold,
                                                 style = MaterialTheme.typography.headlineSmall
                                         )
@@ -213,7 +215,9 @@ fun MainScreen(viewModel: MiamiViewModel, onItemClick: (Int) -> Unit) {
                                                                                                                 category.icon
                                                                                         ),
                                                                                 contentDescription =
-                                                                                        category.title
+                                                                                        stringResource(
+                                                                                                category.titleRes
+                                                                                        )
                                                                         )
                                                                 }
                                                         }
@@ -304,7 +308,7 @@ fun MiamiCard(item: MiamiItem, onClick: () -> Unit) {
                                                         modifier = Modifier.size(16.dp)
                                                 )
                                                 Text(
-                                                        text = "Promocionado",
+                                                        text = stringResource(R.string.sponsored),
                                                         style =
                                                                 MaterialTheme.typography.labelSmall
                                                                         .copy(

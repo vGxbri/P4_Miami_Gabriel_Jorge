@@ -32,6 +32,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -197,7 +198,11 @@ fun DetailScreen(itemId: Int, viewModel: MiamiViewModel, onBack: () -> Unit) {
                                                                                 Modifier.size(14.dp)
                                                                 )
                                                                 Text(
-                                                                        text = "Promocionado",
+                                                                        text =
+                                                                                stringResource(
+                                                                                        R.string
+                                                                                                .sponsored
+                                                                                ),
                                                                         style =
                                                                                 MaterialTheme
                                                                                         .typography
@@ -258,7 +263,7 @@ fun DetailScreen(itemId: Int, viewModel: MiamiViewModel, onBack: () -> Unit) {
                 ) {
                         Icon(
                                 imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                                contentDescription = null,
+                                contentDescription = stringResource(R.string.back),
                                 tint = MaterialTheme.colorScheme.primary,
                                 modifier = Modifier.size(22.dp)
                         )

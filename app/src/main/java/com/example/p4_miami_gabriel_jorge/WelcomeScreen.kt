@@ -25,6 +25,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -83,7 +84,7 @@ fun WelcomeScreen(onEnter: () -> Unit) {
                         // Títulos con animación de fade-in
                         Column(verticalArrangement = Arrangement.spacedBy((-10).dp)) {
                                 Text(
-                                        text = "Descubre",
+                                        text = stringResource(R.string.discover),
                                         style =
                                                 MaterialTheme.typography.headlineLarge.copy(
                                                         fontWeight = FontWeight.SemiBold,
@@ -92,7 +93,7 @@ fun WelcomeScreen(onEnter: () -> Unit) {
                                         color = MaterialTheme.colorScheme.secondary
                                 )
                                 Text(
-                                        text = "MIAMI",
+                                        text = stringResource(R.string.miami).uppercase(),
                                         style =
                                                 MaterialTheme.typography.displayLarge.copy(
                                                         fontWeight = FontWeight.Bold,
@@ -118,7 +119,11 @@ fun WelcomeScreen(onEnter: () -> Unit) {
                                         modifier = Modifier.fillMaxSize()
                                 ) {
                                         Text(
-                                                text = "Explorar Miami",
+                                                text =
+                                                        stringResource(
+                                                                R.string.explore_context,
+                                                                stringResource(R.string.miami)
+                                                        ),
                                                 style =
                                                         MaterialTheme.typography.titleLarge.copy(
                                                                 fontWeight = FontWeight.Bold,
@@ -134,7 +139,7 @@ fun WelcomeScreen(onEnter: () -> Unit) {
 
                         // Subtítulo debajo del botón
                         Text(
-                                text = "Gabriel Almarcha · Jorge Maqueda",
+                                text = stringResource(R.string.authors),
                                 style = MaterialTheme.typography.labelSmall,
                                 color = MaterialTheme.colorScheme.primary,
                                 modifier = Modifier.fillMaxWidth(),
