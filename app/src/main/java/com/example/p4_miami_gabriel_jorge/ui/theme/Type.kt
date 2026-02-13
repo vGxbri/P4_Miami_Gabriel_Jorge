@@ -1,3 +1,5 @@
+// Gabriel Almarcha Martínez y Jorge Maqueda Miguel
+
 package com.example.p4_miami_gabriel_jorge.ui.theme
 
 import androidx.compose.material3.Typography

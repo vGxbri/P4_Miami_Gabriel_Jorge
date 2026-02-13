@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">P4_Miami_Gabriel_Jorge</string>
+    <string name="discover">Découvrez</string>
+    <string name="miami">Miami</string>
+    <string name="explore_context">Explorer %1$s</string>
+    <string name="authors">Gabriel Almarcha · Jorge Maqueda</string>
+    <string name="sponsored">Sponsorisé</string>
+    <string name="back">Retour</string>
+    <string name="category_sports">Sports</string>
+    <string name="category_food">Cuisine</string>
+    <string name="category_buildings">Bâtiments</string>
+    <string name="category_nature">Détente</string>
+</resources>
